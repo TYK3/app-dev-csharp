@@ -1,4 +1,26 @@
-﻿// using System;
+﻿//Arrays
+// -An array is a collection of items of the same type stored 
+// at contiguous memory locations. Arrays are fixed in size, 
+// meaning once you define the size of an array, you can’t change it.
+// -Common operations with arrays include searching, sorting, and modifying elements. 
+// However, remember that arrays are of a fixed size, so they’re not always the most 
+// flexible choice
+
+////An array named numbers that can store 5 integers. By default, all elements 
+////in the array are initialized to 0
+//int[] numbers = new int[5]; // An array of 5 integers
+
+//// Access elements in an array using their index, which starts at 0
+// numbers[0] = 10; // Set the first element to 10
+// Console.WriteLine(numbers[0]); // Output: 10
+
+// //Use a for loop to iterate through an array and perform operations on each element.
+// for (int i = 0; i < numbers.Length; i++)
+// {
+//     Console.WriteLine(numbers[i]);
+// }
+
+// using System;
 
 // namespace Collections
 // {
@@ -68,6 +90,58 @@
 //     }
 // }
 
+//List
+// -A List in C# is a dynamic collection that can grow or shrink as needed, 
+// making it more flexible than an array.
+// -Lists are more versatile than arrays because they can dynamically 
+// adjust their size. However, they use more memory because of this flexibility.
+
+// //create a list of integers
+// List<int> numbers = new List<int>();
+
+// //add elements to a list using the Add method.
+// numbers.Add(10);
+// numbers.Add(20);
+
+//access elements in a list using an index.
+// Console.WriteLine(numbers[0]); // Output: 10
+
+//// remove elements from a list using the Remove method.
+// numbers.Remove(10); // Removes the first occurrence of 10
+
+////iterate through a list using a foreach loop, which is a bit more readable than a for loop.
+// foreach (int number in numbers)
+// {
+//     Console.WriteLine(number);
+// }
+
+// using System;
+// using System.Collections.Generic;
+
+// namespace Collections
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             List<int> numbers = new List<int> { 1, 2, 3 };
+
+//             // Add and remove elements
+//             numbers.Add(4);
+//             numbers.Remove(2);
+
+//             // Print the list
+//             Console.WriteLine("List elements:");
+//             foreach (int number in numbers)
+//             {
+//                 Console.WriteLine(number);
+//             }
+//         }
+//     }
+// }
+
+
+
 // Example: Demonstrating Add, Remove, Contains, IndexOf, Insert, and Clear with a List.
 
 // using System;
@@ -128,6 +202,60 @@
 //         }
 //     }
 // }
+
+//Dictionary
+// -Dictionary in C# is a collection of key-value pairs. Each key in a dictionary is unique,
+// and it’s used to access the corresponding value.
+// -Dictionaries are very efficient for lookups when you have unique keys, 
+// but they require a bit more overhead compared to lists and arrays
+
+// //create a dictionary where the key is a string and the value is an integer
+// Dictionary<string, int> ages = new Dictionary<string, int>();
+
+// //add key-value pairs to a dictionary using the Add method.
+// ages.Add("Alice", 25);
+// ages.Add("Bob", 30);
+
+// // To access a value, you use the corresponding key.
+// Console.WriteLine(ages["Alice"]); // Output: 25
+
+// // remove a key-value pair using the Remove method.
+// ages.Remove("Alice");
+
+// //iterate through a dictionary using a foreach loop to access both keys and values.
+// foreach (var pair in ages)
+// {
+//     Console.WriteLine($"{pair.Key}: {pair.Value}");
+// }
+
+// using System;
+// using System.Collections.Generic;
+
+// namespace Collections
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Dictionary<int, string> students = new Dictionary<int, string>();
+
+//             // Add elements
+//             students.Add(1, "Alice");
+//             students.Add(2, "Bob");
+
+//             // Remove an element
+//             students.Remove(1);
+
+//             // Print the dictionary
+//             Console.WriteLine("Dictionary elements:");
+//             foreach (var student in students)
+//             {
+//                 Console.WriteLine($"ID: {student.Key}, Name: {student.Value}");
+//             }
+//         }
+//     }
+// }
+
 
 // Example: Comprehensive Dictionary Operations
 
@@ -201,7 +329,146 @@
 //     }
 // }
 
+// Set
+// -A Set in C# is a collection that contains unique elements. 
+// This means that it automatically prevents duplicates, 
+// making it useful when you want to ensure that your collection has only distinct items.
+// -Sets are especially useful when you need to ensure that a collection has no duplicates 
+// and when the order of elements is not important.
+
+// //create a set of integers
+// HashSet<int> numbers = new HashSet<int>();
+
+// //add elements to a set using the Add method.
+// numbers.Add(10);
+// numbers.Add(20);
+// numbers.Add(10); // This will not add another 10, as it’s a duplicate
+
+// //iterate through a set using a foreach loop.
+// foreach (int number in numbers)
+// {
+//     Console.WriteLine(number);
+// }
+
+// using System;
+// using System.Collections.Generic;
+
+// namespace Collections
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             HashSet<int> numbers = new HashSet<int> { 1, 2, 3, 4 };
+
+//             // Add elements
+//             numbers.Add(5);
+//             numbers.Add(3); // Duplicate, won't be added
+
+//             // Print the set
+//             Console.WriteLine("Set elements:");
+//             foreach (int number in numbers)
+//             {
+//                 Console.WriteLine(number);
+//             }
+
+//             // Perform a union operation with another set
+//             HashSet<int> otherNumbers = new HashSet<int> { 3, 4, 5, 6 };
+//             numbers.UnionWith(otherNumbers);
+
+//             Console.WriteLine("Set after union:");
+//             foreach (int number in numbers)
+//             {
+//                 Console.WriteLine(number);
+//             }
+//         }
+//     }
+// }
+
+
 // Example: Working with Sets in C#
+
+
+// using System;
+// using System.Collections.Generic;
+
+// namespace SetOperations
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             // Original sets
+//             HashSet<int> originalSetA = new HashSet<int> { 1, 2, 3, 4 };
+//             HashSet<int> setB = new HashSet<int> { 3, 4, 5, 6 };
+
+//             // Clone original setA to preserve its state
+//             HashSet<int> setA = new HashSet<int>(originalSetA);
+
+//             // Add an element to setA
+//             setA.Add(7);
+//             Console.WriteLine("After adding 7 to setA:");
+//             PrintSet(setA);
+
+//             // Reset setA to original
+//             setA = new HashSet<int>(originalSetA);
+
+//             // Remove an element from setA
+//             setA.Remove(1);
+//             Console.WriteLine("\nAfter removing 1 from setA:");
+//             PrintSet(setA);
+
+//             // Reset setA to original
+//             setA = new HashSet<int>(originalSetA);
+
+//             // Perform a union of setA and setB
+//             setA.UnionWith(setB);
+//             Console.WriteLine("\nAfter union of setA and setB:");
+//             PrintSet(setA);
+
+//             // Reset setA to original
+//             setA = new HashSet<int>(originalSetA);
+
+//             // Perform an intersection of setA and setB
+//             setA.IntersectWith(setB);
+//             Console.WriteLine("\nAfter intersection of setA and setB:");
+//             PrintSet(setA);
+
+//             // Reset setA to original
+//             setA = new HashSet<int>(originalSetA);
+
+//             // Perform a difference of setA and setB (removes elements of setB from setA)
+//             setA.ExceptWith(setB);
+//             Console.WriteLine("\nAfter difference (setA except setB):");
+//             PrintSet(setA);
+
+//             // Reset setA to original
+//             setA = new HashSet<int>(originalSetA);
+
+//             // Perform a symmetric difference (elements in either setA or setB but not in both)
+//             setA.SymmetricExceptWith(setB);
+//             Console.WriteLine("\nAfter symmetric difference of setA and setB:");
+//             PrintSet(setA);
+
+//             // Check if setA contains a specific element
+//             bool containsThree = setA.Contains(3);
+//             Console.WriteLine($"\nSetA contains 3: {containsThree}");
+
+//             // Check if setA equals setB
+//             bool setsEqual = setA.SetEquals(setB);
+//             Console.WriteLine($"\nSetA equals SetB: {setsEqual}");
+//         }
+
+//         static void PrintSet(HashSet<int> set)
+//         {
+//             Console.WriteLine("Set elements:");
+//             foreach (int element in set)
+//             {
+//                 Console.WriteLine(element);
+//             }
+//         }
+//     }
+// }
 
 // using System;
 // using System.Collections.Generic;
@@ -265,3 +532,41 @@
 //         }
 //     }
 // }
+
+// Generics
+// -Generics allow you to define a class, method, delegate, or interface with 
+// a placeholder for the data type. This makes your code more reusable and type-safe.
+// -A generic in C# is a feature that allows you to write flexible and reusable code by working 
+// with any data type without specifying it in advance. It’s like a template that can handle different 
+// types of data without needing to write separate code for each type
+// -Imagine you have a box that can hold different things. Sometimes you might want it to hold apples, 
+// and other times you might want it to hold oranges. A generic is like that box—it can hold any type of item, 
+// but you decide what type when you use it.
+// -generics help you write code that is more flexible, reusable, and safe, because you can specify the type of data 
+// it will work with only when you actually use it. This way, you avoid making mistakes like putting the wrong type 
+// of item in the wrong place.
+
+// List<int> numberList = new List<int>(); // A list that holds integers
+// List<string> wordList = new List<string>(); // A list that holds strings
+
+// // A non-generic list, such as ArrayList, can store items of any data type. 
+// // However, this flexibility comes at the cost of type safety
+// System.Collections.ArrayList nonGenericList = new System.Collections.ArrayList();
+// nonGenericList.Add(10);    // Adding an integer
+// nonGenericList.Add("Hello"); // Adding a string
+// nonGenericList.Add(3.14);    // Adding a double
+
+// // Type Safety: No type safety. You can add items of different data types to the same list, 
+// // which can lead to runtime errors if you try to retrieve an item and use it in a way that’s 
+// // incompatible with its actual type.
+
+// int firstItem = (int)nonGenericList[0]; // Requires explicit casting
+// string secondItem = (string)nonGenericList[1];
+
+// // A generic list, such as List<T>, is type-safe. It requires you to specify the data type of the items it 
+// // will store when you declare the list.
+// List<int> genericList = new List<int>();
+// genericList.Add(10);    // Adding an integer
+// // genericList.Add("Hello"); // This will cause a compile-time error
+// genericList.Add(20);    // Adding another integer
+// int firstItem = genericList[0]; // No casting required
