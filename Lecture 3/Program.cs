@@ -4,13 +4,13 @@
 // meaning once you define the size of an array, you can’t change it.
 // -Common operations with arrays include searching, sorting, and modifying elements. 
 // However, remember that arrays are of a fixed size, so they’re not always the most 
-// flexible choice
+// flexible choice.
 
-////An array named numbers that can store 5 integers. By default, all elements 
-////in the array are initialized to 0
-//int[] numbers = new int[5]; // An array of 5 integers
+//An array named numbers that can store 5 integers. By default, all elements 
+//in the array are initialized to 0
+// int[] numbers = new int[5]; // An array of 5 integers
 
-//// Access elements in an array using their index, which starts at 0
+// // Access elements in an array using their index, which starts at 0
 // numbers[0] = 10; // Set the first element to 10
 // Console.WriteLine(numbers[0]); // Output: 10
 
@@ -103,13 +103,13 @@
 // numbers.Add(10);
 // numbers.Add(20);
 
-//access elements in a list using an index.
+// //access elements in a list using an index.
 // Console.WriteLine(numbers[0]); // Output: 10
 
-//// remove elements from a list using the Remove method.
+// // remove elements from a list using the Remove method.
 // numbers.Remove(10); // Removes the first occurrence of 10
 
-////iterate through a list using a foreach loop, which is a bit more readable than a for loop.
+// //iterate through a list using a foreach loop, which is a bit more readable than a for loop.
 // foreach (int number in numbers)
 // {
 //     Console.WriteLine(number);
@@ -138,7 +138,7 @@
 //             }
 //         }
 //     }
-// }
+//  }
 
 
 
@@ -164,7 +164,7 @@
 
 //             // Remove an element from the list
 //             numbers.Remove(2);
-//             Console.WriteLine("After removing element '2':");
+//             Console.WriteLine("\nAfter removing element '2':");
 //             PrintList(numbers);
 
 //             // Check if the list contains an element
@@ -204,12 +204,14 @@
 // }
 
 //Dictionary
-// -Dictionary in C# is a collection of key-value pairs. Each key in a dictionary is unique,
+// -Dictionary in C# is a collection of key-value pairs. 
+// Each key in a dictionary is unique,
 // and it’s used to access the corresponding value.
 // -Dictionaries are very efficient for lookups when you have unique keys, 
 // but they require a bit more overhead compared to lists and arrays
 
-// //create a dictionary where the key is a string and the value is an integer
+// //create a dictionary where the key is a string and 
+// //the value is an integer
 // Dictionary<string, int> ages = new Dictionary<string, int>();
 
 // //add key-value pairs to a dictionary using the Add method.
@@ -533,17 +535,23 @@
 //     }
 // }
 
-// Generics
+// // Generics
 // -Generics allow you to define a class, method, delegate, or interface with 
 // a placeholder for the data type. This makes your code more reusable and type-safe.
-// -A generic in C# is a feature that allows you to write flexible and reusable code by working 
-// with any data type without specifying it in advance. It’s like a template that can handle different 
+// -A generic in C# is a feature that allows you to write flexible and reusable code 
+// by working 
+// with any data type without specifying it in advance. It’s like a template that can 
+// handle different 
 // types of data without needing to write separate code for each type
-// -Imagine you have a box that can hold different things. Sometimes you might want it to hold apples, 
-// and other times you might want it to hold oranges. A generic is like that box—it can hold any type of item, 
+// -Imagine you have a box that can hold different things. Sometimes you might want it 
+// to hold apples, 
+// and other times you might want it to hold oranges. A generic is like that box—it can
+//  hold any type of item, 
 // but you decide what type when you use it.
-// -generics help you write code that is more flexible, reusable, and safe, because you can specify the type of data 
-// it will work with only when you actually use it. This way, you avoid making mistakes like putting the wrong type 
+// -generics help you write code that is more flexible, reusable, and safe, because you 
+// can specify the type of data 
+// it will work with only when you actually use it. This way, you avoid making mistakes 
+// like putting the wrong type 
 // of item in the wrong place.
 
 // List<int> numberList = new List<int>(); // A list that holds integers
@@ -567,6 +575,355 @@
 // // will store when you declare the list.
 // List<int> genericList = new List<int>();
 // genericList.Add(10);    // Adding an integer
-// // genericList.Add("Hello"); // This will cause a compile-time error
+// //genericList.Add("Hello"); // This will cause a compile-time error
 // genericList.Add(20);    // Adding another integer
 // int firstItem = genericList[0]; // No casting required
+
+//                      //
+//  Subtopic Tutorial   //
+//                      //
+// 1. Arrays: Resizing an Array
+// Question:
+// Write a program that initializes an array with 5 integers. Then, ask the user to enter 5 more integers. 
+// Create a new array that combines the original array and the new integers, effectively resizing the array. 
+// Display the contents of the combined array.
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[] originalArray = { 1, 2, 3, 4, 5 };
+//         int[] newArray = new int[10];
+
+//         // Copy original array to the new array
+//         for (int i = 0; i < originalArray.Length; i++)
+//         {
+//             newArray[i] = originalArray[i];
+//         }
+
+//         // Adding new elements to the array
+//         for (int i = originalArray.Length; i < newArray.Length; i++)
+//         {
+//             Console.Write("Enter a new number: ");
+//             newArray[i] = int.Parse(Console.ReadLine());
+//         }
+
+//         // Display the combined array
+//         Console.WriteLine("Combined array: ");
+//         foreach (int number in newArray)
+//         {
+//             Console.Write(number + " ");
+//         }
+//     }
+// }
+
+// 2. Lists: Managing a To-Do List
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         List<string> toDoList = new List<string>();
+//         int option;
+
+//         do
+//         {
+//             Console.WriteLine("");
+//             Console.WriteLine("1. Add a task");
+//             Console.WriteLine("2. Remove a task");
+//             Console.WriteLine("3. View all tasks");
+//             Console.WriteLine("4. Exit");
+//             Console.Write("Choose an option: ");
+//             option = int.Parse(Console.ReadLine());
+
+//             switch (option)
+//             {
+//                 case 1:
+//                     Console.Write("Enter the task: ");
+//                     toDoList.Add(Console.ReadLine());
+//                     break;
+//                 case 2:
+//                     Console.Write("Enter the task number to remove: ");
+//                     int taskIndex = int.Parse(Console.ReadLine()) - 1;
+//                     if (taskIndex >= 0 && taskIndex < toDoList.Count)
+//                     {
+//                         toDoList.RemoveAt(taskIndex);
+//                     }
+//                     else
+//                     {
+//                         Console.WriteLine("Invalid task number.");
+//                     }
+//                     break;
+//                 case 3:
+//                     Console.WriteLine("Tasks:");
+//                     for (int i = 0; i < toDoList.Count; i++)
+//                     {
+//                         Console.WriteLine($"{i + 1}. {toDoList[i]}");
+//                     }
+//                     break;
+//             }
+
+//         } while (option != 4);
+//     }
+// }
+
+//3. Dictionaries: Counting Word Frequencies
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter a sentence: ");
+        string sentence = Console.ReadLine().ToLower();
+        string[] words = sentence.Split(new char[] { ' ', '.', ',', '!', '?' });
+
+        Dictionary<string, int> wordFrequencies = new Dictionary<string, int>();
+
+        foreach (string word in words)
+        {
+            if (wordFrequencies.ContainsKey(word))
+            {
+                wordFrequencies[word]++;
+            }
+            else
+            {
+                wordFrequencies.Add(word, 1);
+            }
+        }
+
+        Console.WriteLine("Word frequencies:");
+        foreach (var pair in wordFrequencies)
+        {
+            Console.WriteLine($"{pair.Key}: {pair.Value}");
+        }
+    }
+}
+
+// 4. Sets: Finding Common Elements
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         Console.Write("Enter the first list of numbers (comma-separated): ");
+//         string[] firstListInput = Console.ReadLine().Split(',');
+//         HashSet<int> firstSet = new HashSet<int>();
+
+//         foreach (string number in firstListInput)
+//         {
+//             firstSet.Add(int.Parse(number.Trim()));
+//         }
+
+//         Console.Write("Enter the second list of numbers (comma-separated): ");
+//         string[] secondListInput = Console.ReadLine().Split(',');
+//         HashSet<int> secondSet = new HashSet<int>();
+
+//         foreach (string number in secondListInput)
+//         {
+//             secondSet.Add(int.Parse(number.Trim()));
+//         }
+
+//         firstSet.IntersectWith(secondSet);
+
+//         Console.WriteLine("Common elements:");
+//         foreach (int number in firstSet)
+//         {
+//             Console.Write(number + " ");
+//         }
+//     }
+// }
+
+//              //
+//  Tutorials   //
+//              //
+
+// 1. Calculate Average Grade and Find Highest Using Lists and Loops
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         List<string> names = new List<string>();
+//         List<int> grades = new List<int>();
+//         int totalGrades = 0;
+
+//         for (int i = 0; i < 5; i++)
+//         {
+//             Console.Write($"Enter the name of student {i + 1}: ");
+//             names.Add(Console.ReadLine());
+
+//             Console.Write($"Enter the grade of student {i + 1}: ");
+//             int grade = int.Parse(Console.ReadLine());
+//             grades.Add(grade);
+//             totalGrades += grade;
+//         }
+
+//         double averageGrade = totalGrades / 5.0;
+//         Console.WriteLine($"\nThe average grade is: {averageGrade}");
+
+//         int highestGrade = grades[0];
+//         string highestName = names[0];
+
+//         for (int i = 1; i < grades.Count; i++)
+//         {
+//             if (grades[i] > highestGrade)
+//             {
+//                 highestGrade = grades[i];
+//                 highestName = names[i];
+//             }
+//         }
+
+//         Console.WriteLine($"The highest grade is {highestGrade} by {highestName}.");
+//     }
+// }
+
+// 2. Manage an Inventory Using Dictionaries
+
+// using System;
+// using System.Collections.Generic;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         Dictionary<string, int> inventory = new Dictionary<string, int>();
+//         int option;
+
+//         do
+//         {
+//             Console.WriteLine("1. Add an item");
+//             Console.WriteLine("2. Remove an item");
+//             Console.WriteLine("3. Update item quantity");
+//             Console.WriteLine("4. View inventory");
+//             Console.WriteLine("5. Exit");
+//             Console.Write("Choose an option: ");
+//             option = int.Parse(Console.ReadLine());
+
+//             switch (option)
+//             {
+//                 case 1:
+//                     Console.Write("Enter the item name: ");
+//                     string itemName = Console.ReadLine();
+//                     Console.Write("Enter the quantity: ");
+//                     int quantity = int.Parse(Console.ReadLine());
+//                     inventory[itemName] = quantity;
+//                     break;
+//                 case 2:
+//                     Console.Write("Enter the item name to remove: ");
+//                     itemName = Console.ReadLine();
+//                     if (inventory.ContainsKey(itemName))
+//                     {
+//                         inventory.Remove(itemName);
+//                     }
+//                     else
+//                     {
+//                         Console.WriteLine("Item not found.");
+//                     }
+//                     break;
+//                 case 3:
+//                     Console.Write("Enter the item name to update: ");
+//                     itemName = Console.ReadLine();
+//                     if (inventory.ContainsKey(itemName))
+//                     {
+//                         Console.Write("Enter the new quantity: ");
+//                         quantity = int.Parse(Console.ReadLine());
+//                         inventory[itemName] = quantity;
+//                     }
+//                     else
+//                     {
+//                         Console.WriteLine("Item not found.");
+//                     }
+//                     break;
+//                 case 4:
+//                     Console.WriteLine("Inventory:");
+//                     foreach (var pair in inventory)
+//                     {
+//                         Console.WriteLine($"{pair.Key}: {pair.Value}");
+//                     }
+//                     break;
+//             }
+
+//         } while (option != 5);
+//     }
+// }
+
+// 3. Count Even and Odd Numbers Using Arrays and Loops
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         int[] numbers = new int[10];
+//         Random random = new Random();
+//         int evenCount = 0, oddCount = 0;
+
+//         for (int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = random.Next(1, 101); // Random numbers between 1 and 100
+//             Console.Write(numbers[i] + " ");
+//         }
+
+//         Console.WriteLine();
+
+//         foreach (int number in numbers)
+//         {
+//             if (number % 2 == 0)
+//             {
+//                 evenCount++;
+//             }
+//             else
+//             {
+//                 oddCount++;
+//             }
+//         }
+
+//         Console.WriteLine($"Number of even numbers: {evenCount}");
+//         Console.WriteLine($"Number of odd numbers: {oddCount}");
+//     }
+// }
+
+//4. Unique Word List Using a HashSet and a Loop
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         // Step 1: Get input from the user
+//         Console.Write("Enter words (comma-separated): ");
+//         string input = Console.ReadLine();
+
+//         // Step 2: Split the input string into an array of words
+//         string[] wordsArray = input.Split(',');
+
+//         // Step 3: Create a HashSet to store unique words
+//         HashSet<string> uniqueWords = new HashSet<string>();
+
+//         // Step 4: Add words to the HashSet (duplicates will be ignored)
+//         foreach (string word in wordsArray)
+//         {
+//             uniqueWords.Add(word.Trim()); // Trim to remove any extra spaces
+//         }
+
+//         // Step 5: Convert the HashSet to a List and sort it alphabetically
+//         List<string> sortedWords = uniqueWords.ToList();
+//         sortedWords.Sort();
+
+//         // Step 6: Display the unique, sorted words
+//         Console.WriteLine("Unique words: " + string.Join(", ", sortedWords));
+//     }
+// }
