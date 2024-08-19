@@ -12,7 +12,8 @@
 
 // Example: Define a Car class and create an object.
 
-// using System; //imports the System namespace, which provides fundamental classes like Console for input and output.
+// using System; //imports the System namespace, 
+// // which provides fundamental classes like Console for input and output.
 
 // namespace OOPConcepts // groups related classes under a common name. 
 //                       //Namespaces help organize code and avoid naming conflicts.
@@ -25,7 +26,8 @@
 //         public string model; // stores the model name of the car.
 //         public int year; // stores the year of manufacture.
 
-//         public void StartEngine() // method that describes a behavior of the Car class.
+//         public void StartEngine() 
+//         // method that describes a behavior of the Car class.
 //         {
 //             Console.WriteLine("The engine is started.");
 //         }
@@ -83,7 +85,13 @@
 //     {
 //         static void Main(string[] args)
 //         {
-//             Car myCar = new Car { Model = "Toyota", Year = 2020, Color = "Red", FuelType = "Petrol" };
+//             Car myCar = new Car 
+//             { 
+//                 Model = "Toyota", 
+//                 Year = 2020, 
+//                 Color = "Red", 
+//                 FuelType = "Petrol" 
+//             };
 //             myCar.StartEngine();
 //             myCar.Accelerate();
 //             myCar.Brake();
@@ -283,7 +291,9 @@
 //             student.Age = 25;  // Valid age
 //             student.Introduce();
 
-//             student.Age = 150; // Invalid age
+//             // student._age = 25;  // Valid age
+
+//             //student.Age = 150; // Invalid age
 //         }
 //     }
 // }
@@ -390,7 +400,7 @@
 //             myCar.Honk();
 //             myCar.Stop();
 
-//             Motorcycle myBike = new Motorcycle { Brand = "Harley-Davidson" };
+//             Motorcycle myBike = new Motorcycle { Brand = "Harley-Davidson"};
 //             myBike.Start();
 //             myBike.Wheelie();
 //             myBike.Stop();
@@ -449,10 +459,13 @@
 //     }
 // }
 
-//Polymorphism allows objects of different classes to be treated as objects of a common base class.
-// Compile-time Polymorphism (Method Overloading): Same method name, different parameters.
+//Polymorphism allows objects of different classes to be 
+//treated as objects of a common base class.
 
-// using System;
+// Compile-time Polymorphism (Method Overloading): 
+//Same method name, different parameters.
+
+//using System;
 
 // namespace PolymorphismExample
 // {
@@ -495,7 +508,7 @@
 //     }
 // }
 
-//using System;
+// using System;
 
 // namespace PolymorphismExample
 // {
@@ -702,11 +715,13 @@
 //     {
 //         static void Main(string[] args)
 //         {
+//             Employee emp3 = new Employee { Name = "Lee" };
 //             Employee emp1 = new Manager { Name = "Alice" };
 //             Employee emp2 = new Developer { Name = "Bob" };
 
 //             emp1.Work();  // Output: Alice is managing the team.
 //             emp2.Work();  // Output: Bob is writing code.
+//             emp3.Work();
 //         }
 //     }
 // }
@@ -849,7 +864,6 @@
 //             Console.WriteLine($"The {Brand} washing machine is washing clothes.");
 //         }
 //     }
-
 //     class Microwave : Appliance
 //     {
 //         public override void Operate()
@@ -857,7 +871,6 @@
 //             Console.WriteLine($"The {Brand} microwave is heating food.");
 //         }
 //     }
-
 //     class Program
 //     {
 //         static void Main(string[] args)
@@ -870,7 +883,444 @@
 //         }
 //     }
 // }
+    
 
 
 
+//                      //
+//  Subtopic Questions  //
+//                      //
 
+//Question 1:
+// Create a base class `LibraryItem` with private fields for `Title` and `YearPublished`.
+// Add public properties to access these fields.
+// Derive a class `Book` from `LibraryItem` that includes an additional property `Author`.
+// Write a program to create a `Book` object, set all its properties, and display its details.
+
+// using System;
+
+// namespace OOPConcepts
+// {
+//     class LibraryItem
+//     {
+//         private string _title;
+//         private int _yearPublished;
+
+//         public string Title
+//         {
+//             get { return _title; }
+//             set { _title = value; }
+//         }
+
+//         public int YearPublished
+//         {
+//             get { return _yearPublished; }
+//             set { _yearPublished = value; }
+//         }
+//     }
+
+//     class Book : LibraryItem
+//     {
+//         public string Author { get; set; }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Book myBook = new Book
+//             {
+//                 Title = "The Great Gatsby",
+//                 YearPublished = 1925,
+//                 Author = "F. Scott Fitzgerald"
+//             };
+
+//             Console.WriteLine($"Title: {myBook.Title}");
+//             Console.WriteLine($"Year Published: {myBook.YearPublished}");
+//             Console.WriteLine($"Author: {myBook.Author}");
+//         }
+//     }
+// }
+
+//Question 2:
+// Define a base class `Account` with private fields for `AccountHolder` and `Balance`.
+// Implement methods to deposit and withdraw funds with validation.
+// Create a derived class `BusinessAccount` that adds a `BusinessName` property and a method to apply a business fee.
+// Demonstrate how to create and use these classes.
+
+// using System;
+
+// namespace OOPConcepts
+// {
+//     class Account
+//     {
+//         private string _accountHolder;
+//         private double _balance;
+
+//         public string AccountHolder
+//         {
+//             get { return _accountHolder; }
+//             set { _accountHolder = value; }
+//         }
+
+//         public double Balance
+//         {
+//             get { return _balance; }
+//             private set { _balance = value; }
+//         }
+
+//         public void Deposit(double amount)
+//         {
+//             if (amount > 0)
+//             {
+//                 Balance += amount;
+//             }
+//         }
+
+//         public void Withdraw(double amount)
+//         {
+//             if (amount > 0 && amount <= Balance)
+//             {
+//                 Balance -= amount;
+//             }
+//         }
+//     }
+
+//     class BusinessAccount : Account
+//     {
+//         public string BusinessName { get; set; }
+
+//         public void ApplyBusinessFee(double fee)
+//         {
+//             Withdraw(fee);
+//         }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             BusinessAccount myAccount = new BusinessAccount
+//             {
+//                 AccountHolder = "Alice Smith",
+//                 BusinessName = "Tech Innovations"
+//             };
+//             myAccount.Deposit(5000);
+//             myAccount.ApplyBusinessFee(50);
+
+//             Console.WriteLine($"Account Holder: {myAccount.AccountHolder}");
+//             Console.WriteLine($"Balance: {myAccount.Balance}");
+//             Console.WriteLine($"Business Name: {myAccount.BusinessName}");
+//             Console.WriteLine($"Balance after applying fee: {myAccount.Balance}");
+//         }
+//     }
+// }
+
+//Question 1:
+// Create an abstract class `RemoteControl` with an abstract method `PressButton`.
+// Derive two classes, `TelevisionRemote` and `AirConditionerRemote`, that implement the `PressButton` method.
+// Write a program to create instances of both remotes and demonstrate polymorphism by calling the `PressButton` method.
+
+using System;
+
+namespace PolymorphismExample
+{
+    abstract class RemoteControl
+    {
+        public abstract void PressButton();
+    }
+
+    class TelevisionRemote : RemoteControl
+    {
+        public override void PressButton()
+        {
+            Console.WriteLine("TV Remote Button Pressed: Turning on TV");
+        }
+    }
+
+    class AirConditionerRemote : RemoteControl
+    {
+        public override void PressButton()
+        {
+            Console.WriteLine("AC Remote Button Pressed: Setting temperature to 22°C");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            RemoteControl tvRemote = new TelevisionRemote();
+            RemoteControl acRemote = new AirConditionerRemote();
+
+            tvRemote.PressButton();
+            acRemote.PressButton();
+        }
+    }
+}
+
+//Question 2:
+// Define an abstract class `PaymentMethod` with an abstract method `ProcessPayment`.
+// Implement derived classes `CreditCard` and `PayPal` that provide specific implementations of `ProcessPayment`.
+// Demonstrate polymorphism by creating a list of `PaymentMethod` references and processing payments using different methods.
+
+// using System;
+// using System.Collections.Generic;
+
+// namespace PolymorphismExample
+// {
+//     abstract class PaymentMethod
+//     {
+//         public abstract void ProcessPayment(double amount);
+//     }
+
+//     class CreditCard : PaymentMethod
+//     {
+//         public override void ProcessPayment(double amount)
+//         {
+//             Console.WriteLine($"Processing Credit Card Payment: ${amount}");
+//         }
+//     }
+
+//     class PayPal : PaymentMethod
+//     {
+//         public override void ProcessPayment(double amount)
+//         {
+//             Console.WriteLine($"Processing PayPal Payment: ${amount}");
+//         }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             List<PaymentMethod> payments = new List<PaymentMethod>
+//             {
+//                 new CreditCard(),
+//                 new PayPal()
+//             };
+
+//             foreach (var payment in payments)
+//             {
+//                 payment.ProcessPayment(100);
+//             }
+//         }
+//     }
+// }
+
+//            //
+// Questions //
+//            //
+
+//Question 1:
+// Create an abstract class `Employee` with encapsulated properties for `Name` and `Salary`, and an abstract method `CalculateAnnualBonus`.
+// Derive classes `FullTimeEmployee` and `PartTimeEmployee` that implement `CalculateAnnualBonus` with different logic.
+// Demonstrate encapsulation, inheritance, and polymorphism by calculating bonuses for both types of employees.
+
+// using System;
+
+// namespace OOPConcepts
+// {
+//     abstract class Employee
+//     {
+//         private string _name;
+//         private double _salary;
+
+//         public string Name
+//         {
+//             get { return _name; }
+//             set { _name = value; }
+//         }
+
+//         public double Salary
+//         {
+//             get { return _salary; }
+//             set { _salary = value; }
+//         }
+
+//         public abstract double CalculateAnnualBonus();
+//     }
+
+//     class FullTimeEmployee : Employee
+//     {
+//         public override double CalculateAnnualBonus()
+//         {
+//             return Salary * 0.2; // 20% bonus for full-time employees
+//         }
+//     }
+
+//     class PartTimeEmployee : Employee
+//     {
+//         public override double CalculateAnnualBonus()
+//         {
+//             return Salary * 0.1; // 10% bonus for part-time employees
+//         }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             FullTimeEmployee fullTime = new FullTimeEmployee
+//             {
+//                 Name = "John Doe",
+//                 Salary = 60000
+//             };
+//             PartTimeEmployee partTime = new PartTimeEmployee
+//             {
+//                 Name = "Jane Smith",
+//                 Salary = 20000
+//             };
+
+//             Console.WriteLine($"{fullTime.Name} Annual Bonus: {fullTime.CalculateAnnualBonus()}");
+//             Console.WriteLine($"{partTime.Name} Annual Bonus: {partTime.CalculateAnnualBonus()}");
+//         }
+//     }
+// }
+
+//Question 2:
+// Define a base class `Appliance` with encapsulated properties for `Brand` and `Power`.
+// Create a derived class `WashingMachine` that adds a property for `LoadCapacity` and a method to start the washing cycle.
+// Define another derived class `Microwave` with a method to set the cooking time.
+// Demonstrate encapsulation, inheritance, and method overriding by creating and using these appliance objects.
+
+// using System;
+
+// namespace OOPConcepts
+// {
+//     class Appliance
+//     {
+//         private string _brand;
+//         private int _power;
+
+//         public string Brand
+//         {
+//             get { return _brand; }
+//             set { _brand = value; }
+//         }
+
+//         public int Power
+//         {
+//             get { return _power; }
+//             set { _power = value; }
+//         }
+//     }
+
+//     class WashingMachine : Appliance
+//     {
+//         public int LoadCapacity { get; set; }
+
+//         public void StartWashingCycle()
+//         {
+//             Console.WriteLine("Starting washing cycle.");
+//         }
+//     }
+
+//     class Microwave : Appliance
+//     {
+//         public void SetCookingTime(int minutes)
+//         {
+//             Console.WriteLine($"Setting cooking time to {minutes} minutes.");
+//         }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             WashingMachine washer = new WashingMachine
+//             {
+//                 Brand = "Samsung",
+//                 Power = 1500,
+//                 LoadCapacity = 8
+//             };
+//             Microwave microwave = new Microwave
+//             {
+//                 Brand = "LG",
+//                 Power = 1000
+//             };
+
+//             Console.WriteLine($"Washing Machine - Brand: {washer.Brand}, Power: {washer.Power}W, Load Capacity: {washer.LoadCapacity}kg");
+//             washer.StartWashingCycle();
+
+//             Console.WriteLine($"Microwave - Brand: {microwave.Brand}, Power: {microwave.Power}W");
+//             microwave.SetCookingTime(5);
+//         }
+//     }
+// }
+
+//Question 3:
+// Implement a base class `Shape` with encapsulated properties for `Area` and `Perimeter`, and an abstract method `CalculateDimensions`.
+// Derive classes `Square` and `Circle` that override `CalculateDimensions` to compute their specific area and perimeter.
+// Use encapsulation to protect `Area` and `Perimeter`, and demonstrate inheritance and polymorphism by creating and manipulating shapes.
+
+// using System;
+
+// namespace OOPConcepts
+// {_
+//     abstract class Shape
+//     {
+//         private double _area;
+//         private double _perimeter;
+
+//         public double Area
+//         {
+//             get { return _area; }
+//             protected set { _area = value; }
+//         }
+
+//         public double Perimeter
+//         {
+//             get { return _perimeter; }
+//             protected set { _perimeter = value; }
+//         }
+
+//         public abstract void CalculateDimensions();
+//     }
+
+//     class Square : Shape
+//     {
+//         private double _sideLength;
+
+//         public Square(double sideLength)
+//         {
+//             _sideLength = sideLength;
+//             CalculateDimensions();
+//         }
+
+//         public override void CalculateDimensions()
+//         {
+//             Area = _sideLength * _sideLength;
+//             Perimeter = 4 * _sideLength;
+//         }
+//     }
+
+//     class Circle : Shape
+//     {
+//         private double _radius;
+
+//         public Circle(double radius)
+//         {
+//             _radius = radius;
+//             CalculateDimensions();
+//         }
+
+//         public override void CalculateDimensions()
+//         {
+//             Area = Math.PI * _radius * _radius;
+//             Perimeter = 2 * Math.PI * _radius;
+//         }
+//     }
+
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Shape square = new Square(4);
+//             Shape circle = new Circle(5);
+
+//             Console.WriteLine($"Square - Area: {square.Area}, Perimeter: {square.Perimeter}");
+//             Console.WriteLine($"Circle - Area: {circle.Area}, Perimeter: {circle.Perimeter}");
+//         }
+//     }
+// }
