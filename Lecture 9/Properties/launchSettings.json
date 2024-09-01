@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Image_Analysis": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7220",
+      "launchBrowser": false
+    }
+  }
+}

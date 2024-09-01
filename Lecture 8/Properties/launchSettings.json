@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Merged_Azure_Function": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7144",
+      "launchBrowser": false
+    }
+  }
+}

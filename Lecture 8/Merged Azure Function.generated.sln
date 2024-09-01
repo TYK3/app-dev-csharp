@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Merged Azure Function", "Merged Azure Function.csproj", "{0869ACA2-DDC5-47D5-AC40-46267AB85940}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "obj", "obj", "{998DE08E-F2FC-4679-81D1-E90B8F03B94A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{8CE6C37F-D16A-46E5-AEA8-EE8A45CA3BA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net8.0", "net8.0", "{8CFAF082-A5D1-4CC5-9895-83733303E615}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerExtensions", "obj\Debug\net8.0\WorkerExtensions\WorkerExtensions.csproj", "{ACB3166B-8631-4563-ADF9-27E51DADA3AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0869ACA2-DDC5-47D5-AC40-46267AB85940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0869ACA2-DDC5-47D5-AC40-46267AB85940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0869ACA2-DDC5-47D5-AC40-46267AB85940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0869ACA2-DDC5-47D5-AC40-46267AB85940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB3166B-8631-4563-ADF9-27E51DADA3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB3166B-8631-4563-ADF9-27E51DADA3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB3166B-8631-4563-ADF9-27E51DADA3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB3166B-8631-4563-ADF9-27E51DADA3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8CE6C37F-D16A-46E5-AEA8-EE8A45CA3BA8} = {998DE08E-F2FC-4679-81D1-E90B8F03B94A}
+		{8CFAF082-A5D1-4CC5-9895-83733303E615} = {8CE6C37F-D16A-46E5-AEA8-EE8A45CA3BA8}
+		{ACB3166B-8631-4563-ADF9-27E51DADA3AA} = {8CFAF082-A5D1-4CC5-9895-83733303E615}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79CAED09-DDEB-4FB6-BB44-23AFDEC44BEE}
+	EndGlobalSection
+EndGlobal
